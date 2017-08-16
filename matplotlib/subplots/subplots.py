@@ -8,8 +8,10 @@ import scipy
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+from matplotlib import style
 
 
+style.use("ggplot")
 (fig, axes) = plt.subplots(2, 3)
 plt.sca(axes[1][1])
 x = np.linspace(0, 10, 1000)
