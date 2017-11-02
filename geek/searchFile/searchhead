@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+# _*_ coding: utf-8 _*_
+
+"""
+author : xiaohai
+email : xiaohaijin@outlook.com
+"""
+
+
+import os
+import os.path
+
+
+def loopDir(DIR, head):
+    if os.path.exists(DIR):
+        dirs = os.listdir(DIR)
+        for eachDir in dirs:
+            if os.path.exists(DIR + '/' + eachDir):
+                files = os.listdir(DIR + '/' + eachDir)
+                for eachFile in files:
+                    if eachFile == head:
+                        print(eachDir)
+
+
+if __name__ == '__main__':
+    import sys
+    if len(sys.argv) == 1:
+        print('need a parameter, please check it.')
+    elif len(sys.argv) == 2:
+        head = sys.argv[1]
+        loopDir("/home/xiaohai/Software/qt/install/5.9.1/gcc_64/include", head)

@@ -13,12 +13,12 @@ import os
 import re
 
 
-def search_psi3and3_example(directory, searchPattern):
+def searchCharacter(directory, searchPattern):
     results = {}
     if os.path.isdir(directory):
         for (dirPath, dirNames, fileNames) in os.walk(directory):
             for eachFile in fileNames:
-                if os.path.splitext(eachFile)[1] == ".cxx":
+                if os.path.splitext(eachFile)[1] == ".cpp":
                     fileObj = open(str(dirPath) + "/" + str(eachFile))
                     try:
                         allLines = fileObj.readlines()
@@ -35,8 +35,8 @@ def search_psi3and3_example(directory, searchPattern):
 
 
 if __name__ == '__main__':
-    directory = "/home/jinxiaohai"
-    searchPattern = "psi3"
-    results = search_psi3and3_example(directory, searchPattern)
+    directory = "/home/xiaohai/Program"
+    searchPattern = "Dynamical"
+    results = searchCharacter(directory, searchPattern)
     for key in results:
         print(results[key])
