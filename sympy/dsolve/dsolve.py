@@ -1,19 +1,18 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # _*_ coding: utf-8 _*_
 
-"""document of the module"""
+"""
+author : xiaohai
+email : xiaohaijin@outlook.com
+"""
 
 
-import scipy
-from sympy import *
 import sympy
-import numpy as np
-import matplotlib as mpl
-import matplotlib.pyplot as plt
 
 
-x = sympy.symbols("x")
-f = sympy.symbols("f", cls=Function)
-anwser = sympy.dsolve(Derivative(f(x), x) - f(x), f(x))
+x = sympy.symbols("x", real=True)
+f = sympy.symbols("f", cls=sympy.Function)
+fdot = sympy.Derivative(f(x), x)
 
-print anwser
+result = sympy.dsolve(fdot - f(x), f(x))
+print(result)
