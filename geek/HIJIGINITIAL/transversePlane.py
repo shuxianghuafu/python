@@ -132,7 +132,7 @@ ax.plot(line2x, line2y, color='black', linestyle="--")
 # text
 ax.text(xMeanAuPart+2, yMeanAuPart+8, 'Au', fontsize=24, color='red')
 ax.text(xMeanCuPart-4, yMeanCuPart+8, 'Au', fontsize=24, color='blue')
-ax.text(0, 12, "pHIJING(b = 8fm)", fontsize=24, color='black',
+ax.text(0, 12, "AMPT (b = 8fm)", fontsize=24, color='black',
         horizontalalignment='center',
         verticalalignment='center',
         alpha=1)
@@ -147,5 +147,5 @@ ax.set_axis_off()
 
 plt.xlim(-35, 35)
 plt.ylim(-20, 20)
-plt.savefig("result", fmt="png")
+plt.savefig("result.eps", fmt="eps")
 plt.show()
